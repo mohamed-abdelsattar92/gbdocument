@@ -1,0 +1,85 @@
+% begin the document
+\documentclass[12pt,twoside]{report}
+
+% start of the preamble
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage[backend=bibtex]{biblatex}
+\usepackage{pdfpages}
+\usepackage[allbordercolors = white]{hyperref}
+\usepackage{arabxetex} % for arabic language and needs to be compiled with XeLaTeX and we need to use the command \textarab[utf]{ arabic text here }
+
+\graphicspath{ {figures/} }
+\addbibresource{chapters/references/references.bib}
+
+
+\begin{document}
+	\includepdf{chapters/titlePage/titlePage}
+	\pagenumbering{Roman}
+	\phantomsection
+	
+	
+	\chapter*{Abstract}
+	\addcontentsline{toc}{chapter}{Abstract}
+	\input{chapters/abstract/abstract}
+	
+	
+	\chapter*{Acknowledgment}
+	\addcontentsline{toc}{chapter}{Acknowledgment}
+	\input{chapters/acknowledgment/acknowledgment}
+	
+	
+	\chapter*{Contacts}
+	\addcontentsline{toc}{chapter}{Contacts}
+	\input{chapters/contacts/contacts}
+
+
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\clearpage	%to solve the issue of numbring the list of tables with page number 1
+	\pagenumbering{arabic}
+	\pagestyle{fancy}
+	
+	
+	\chapter{Introduction}
+	\input{chapters/introduction/introduction}
+	
+	\chapter{Market Survey}
+	\input{chapters/market/market}
+	
+	\chapter{Feasibility Study}
+	\input{chapters/feasibility/feasibility}
+	
+	\chapter{Necessary Background}
+	\input{chapters/background/background}
+	
+	\chapter{System Architecture}
+	\input{chapters/architecture/architecture}
+	
+	\chapter{Implementation}
+	\input{chapters/implementation/implementation}
+	
+	\chapter{Testing}
+	\input{chapters/testing/testing}
+	
+	\chapter{Future Work}
+	\input{chapters/future/future}
+	
+	%\addcontentsline{toc}{bibliography}{Bibliography}	
+	
+	\appendix
+	\chapter{User Manual}
+	\input{chapters/user/user}
+	
+	\renewcommand{\bibname}{References}
+	\printbibliography
+	
+	\chapter{Arabic Summary -\textarabic[utf]{الملخص}}
+	\input{chapters/arabicSummary/arabicSummary}
+\end{document}
