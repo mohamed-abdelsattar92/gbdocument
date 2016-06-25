@@ -12,4 +12,5 @@
 *.pdf
 *.jpg
 *.png
-.gitignore~
+references.bib~
+*~

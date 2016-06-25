@@ -1,27 +1,41 @@
-@online{SLA,
+@online{sla,
 author = {Wikipedia},
 title = {Service Level Agreement},
 year = {2016},
 url = {https://en.wikipedia.org/wiki/Service-level_agreement}
 }
 
-@online{Statistics,
+@online{statistics,
 author = {Leah Readings},
 title = {10 Fascinating Field Service Technology Statistics},
 year = {2014},
 url = {http://blog.capterra.com/field-service-technology-statistics/}
 }
 
-@online{Jobber,
+@online{jobber,
 author = {Jobber},
 title = {Jobber Website},
 year = {2016},
 url = {https://www.getjobber.com}
 }
 
-@online{Field Aware,
+@online{field_aware,
 author = {Field Aware},
 title = {Field Aware Website},
 year = {2016},
 url = {http://www.fieldaware.com/}
+}
+
+@online{sales_force_crm,
+author = {Software advice team},
+title = {Sales Force CRM},
+year = {2016},
+url = {http://www.softwareadvice.com/crm/salesforce-profile/}
+}
+
+@online{epr
+author = {Vangie Beal},
+title = {ERP - enterprise resource planning},
+year = {2016},
+url = {http://www.webopedia.com/TERM/E/ERP.html}
 }
