@@ -1,0 +1,27 @@
+@online{SLA,
+author = {Wikipedia},
+title = {Service Level Agreement},
+year = {2016},
+url = {https://en.wikipedia.org/wiki/Service-level_agreement}
+}
+
+@online{Statistics,
+author = {Leah Readings},
+title = {10 Fascinating Field Service Technology Statistics},
+year = {2014},
+url = {http://blog.capterra.com/field-service-technology-statistics/}
+}
+
+@online{Jobber,
+author = {Jobber},
+title = {Jobber Website},
+year = {2016},
+url = {https://www.getjobber.com}
+}
+
+@online{Field Aware,
+author = {Field Aware},
+title = {Field Aware Website},
+year = {2016},
+url = {http://www.fieldaware.com/}
+}
