@@ -33,9 +33,17 @@ year = {2016},
 url = {http://www.softwareadvice.com/crm/salesforce-profile/}
 }
 
-@online{epr
+@online{epr,
 author = {Vangie Beal},
 title = {ERP - enterprise resource planning},
 year = {2016},
 url = {http://www.webopedia.com/TERM/E/ERP.html}
+}
+
+@book{artificial_intelligence,
+  author    = {Peter, Norvig and Stuart, Russell}, 
+  title     = {Artificial Intelligence: A Modern Approach},
+  publisher = {Prentice Hall},
+  year      = {2010},
+  address   = {Upper Saddle River, New Jersey}
 }
