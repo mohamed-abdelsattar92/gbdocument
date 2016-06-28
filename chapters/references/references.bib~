@@ -40,6 +40,27 @@ year = {2016},
 url = {http://www.webopedia.com/TERM/E/ERP.html}
 }
 
+@online{gps_remove_ban,
+author = {Egyption ministry of communications},
+title = {Removing the restriction on using GPS gadgets in Egypt},
+year = {2009},
+url = {http://www.mcit.gov.eg/Ar/Media_Center/Press_Room/Press_Releases/1421}
+}
+
+@online{roi,
+author = {Field Aware},
+title = {Field Aware ROI calculator},
+year = {2016},
+url = {http://www.fieldaware.com/calculators/roi/index.php}
+}
+
+@online{benifits,
+author = {Rochelle Sanchirico},
+title = {Big benefits of field service software for HVAC},
+year = {2016},
+url = {http://mhelpdesk.com/field-service-software-benefits-hvac/}
+}
+
 @book{artificial_intelligence,
   author    = {Peter, Norvig and Stuart, Russell}, 
   title     = {Artificial Intelligence: A Modern Approach},
