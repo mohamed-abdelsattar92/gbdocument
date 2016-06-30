@@ -1,0 +1,9 @@
+Model View Controller (A.K.A MVC) is a software architectural design pattern where it divides the software into three main layers:\cite{mvc_what}
+\subsubsection{Model}
+	It's the structure of the data of the application, how the data is described and stored. Maybe in a database, XML\footnote{Extensible Markup Language.} files, or even some excel sheets. It's only the data without any logic manipulation or presentation information associated with it.
+
+\subsubsection{View}
+	It's the user interface of the application, how the data is presented to the end user, it completely separates presentation of data from the data itself and the business logic, giving designers freedom to work aside from developers.
+
+\subsubsection{Controller}
+	It's the business logic layer, the layer connecting user interface with the data. In its simplest form, it takes user input, query the database, and return the result for the view layer to present it. However business logic can be quite complex requiring querying more than one database at the same time, real time responses, or the advice of a domain expert.

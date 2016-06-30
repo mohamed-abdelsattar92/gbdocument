@@ -54,11 +54,74 @@ year = {2016},
 url = {http://www.fieldaware.com/calculators/roi/index.php}
 }
 
-@online{benifits,
+@online{benefits,
 author = {Rochelle Sanchirico},
 title = {Big benefits of field service software for HVAC},
 year = {2016},
 url = {http://mhelpdesk.com/field-service-software-benefits-hvac/}
+}
+
+@online{mvc_wiki,
+author = {Wikipedia},
+title = {Model View Controller},
+year = {2016},
+url = {https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller}
+}
+
+@online{mvc_what,
+author = {Margaret Rouse},
+title = {Model View Controller},
+year = {2011},
+url = {http://whatis.techtarget.com/definition/model-view-controller-MVC}
+}
+
+@online{mtv,
+author = {Django Documentation Team},
+title = {FAQ: General},
+year = {2016},
+url = {https://docs.djangoproject.com/en/1.9/faq/general/#django-appears-to-be-a-mvc-framework-but-you-call-the-controller-the-view-and-the-view-the-template-how-come-you-don-t-use-the-standard-names}
+}
+
+@online{char_enc,
+author = {Richard Ishida},
+title = {Character encodings: Essential concepts},
+year = {2010},
+url = {https://www.w3.org/International/articles/definitions-characters/}
+}
+
+@online{char_set_enc,
+author = {Richard Ishida},
+title = {Introducing Character Sets and Encodings},
+year = {2009},
+url = {https://www.w3.org/International/getting-started/characters}
+}
+
+@online{char_wiki,
+author = {Wikipedia},
+title = {Character encoding},
+year = {2016},
+url = {https://en.wikipedia.org/wiki/Character_encoding#Common_character_encodings}
+}
+
+@online{web_service_exp,
+author = {Douglas K Barry},
+title = {Web Services Explained},
+year = {2016},
+url = {http://www.service-architecture.com/articles/web-services/web_services_explained.html}
+}
+
+@online{webo,
+author = {Vangie Beal},
+title = {Web services},
+year = {2016},
+url = {http://www.webopedia.com/TERM/W/Web_Services.html}
+}
+
+@online{webservice_w3c,
+author = {David Booth and Hugo Haas},
+title = {Web Services Architecture},
+year = {2004},
+url = {https://www.w3.org/TR/ws-arch/#whatis}
 }
 
 @book{artificial_intelligence,
