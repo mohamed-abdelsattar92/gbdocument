@@ -124,6 +124,13 @@ year = {2004},
 url = {https://www.w3.org/TR/ws-arch/#whatis}
 }
 
+@online{field_service,
+author = {YourDictionary},
+title = {Field Service Definition},
+year = {2016},
+url = {http://www.yourdictionary.com/field-service}
+}
+
 @book{artificial_intelligence,
   author    = {Peter, Norvig and Stuart, Russell}, 
   title     = {Artificial Intelligence: A Modern Approach},
