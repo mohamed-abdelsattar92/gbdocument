@@ -131,6 +131,41 @@ year = {2016},
 url = {http://www.yourdictionary.com/field-service}
 }
 
+@online{django,
+author = {Django Project Documentation Team},
+title = {Django Project Documentation},
+year = {2016},
+url = {https://www.djangoproject.com/}
+}
+
+@online{android_studio,
+author = {Android Studio Documentation Team},
+title = {Andoir Studio Documentation},
+year = {2016},
+url = {https://developer.android.com/studio/index.html}
+}
+
+@online{atom,
+author = {Atom Documentation Team},
+title = {Atom Documentation},
+year = {2016},
+url = {https://atom.io/}
+}
+
+@online{git,
+author = {GIT Documentation Team},
+title = {GIT Documentation},
+year = {2016},
+url = {https://git-scm.com/}
+}
+
+@online{google_maps,
+author = {Google Maps Documentation Team},
+title = {Google Maps Documentation},
+year = {2016},
+url = {https://developers.google.com/maps/}
+}
+
 @book{artificial_intelligence,
   author    = {Peter, Norvig and Stuart, Russell}, 
   title     = {Artificial Intelligence: A Modern Approach},

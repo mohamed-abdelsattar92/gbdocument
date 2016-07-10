@@ -11,8 +11,11 @@
 \usepackage{fancyhdr}
 \usepackage[backend=bibtex]{biblatex}
 \usepackage{pdfpages}
+\usepackage{wrapfig} % for positioning figures and wraping text around them
 \usepackage[allbordercolors = white]{hyperref}
 \usepackage{arabxetex} % for arabic language and needs to be compiled with XeLaTeX and we need to use the command \textarab[utf]{ arabic text here }
+\usepackage{eso-pic}
+
 
 \graphicspath{ {figures/} }
 \addbibresource{chapters/references/references.bib}
@@ -46,7 +49,7 @@
 	\clearpage	%to solve the issue of numbring the list of tables with page number 1
 	\pagenumbering{arabic}
 	\pagestyle{fancy}
-	
+	\fancyfoot[R]{\includegraphics[scale = .3]{titlepage/logo.png}}
 	
 	\chapter{Introduction}
 	\input{chapters/introduction/introduction}
