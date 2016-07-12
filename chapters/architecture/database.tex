@@ -1,0 +1,39 @@
+\subsection{Database Schema}
+	\begin{figure}[ht]
+		\includegraphics[scale = .37]{architecture/schema.png}
+		\caption{Field Service Maestro Database Schema}
+	\end{figure}
+
+\subsection{Object Relational Mapper}
+	Object relational mapper A.K.A(ORM) is the state of the art approach in connecting and dealing with a back end database engine.
+	
+	Simply put ORM in \href{https://www.djangoproject.com}{Django} is an object oriented representation, mapping the actual table and fields of a database to Python classes and methods, where each database table is a Python class, each database field is a Python class attribute, and each method in Python class represents a row-wise operation on a certain row in the database table.
+	
+	Using ORM gives us the freedom to work with different back end engines without concerning ourselves with the hassle of manually connecting to that specific database engine, for example we used SQLite3\footnote{Lightweight cross platform library that implements a simple database engine.} while developing our project and once in production we switched to MySQL.\footnote{The most popular open source database out there.}
+	
+	Following are the UML\footnote{Unified Modeling Language} class diagrams of each module in our project:
+	\subsubsection{Authusers Application}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width = \textwidth]{architecture/authusers_uml.png}
+			\caption{Auth Users Application UML Class Diagram}
+		\end{figure}
+	\subsubsection{Customerservice Application}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale = .55]{architecture/customer_service_uml.png}
+			\caption{Customer Service Application UML Class Diagram}
+		\end{figure}
+	\subsubsection{Technician Application}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale = .6]{architecture/technician_uml.png}
+			\caption{Technician Application UML Class Diagram}
+		\end{figure}
+	\newpage
+	\subsubsection{Ticket Application}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale = .35, angle = 90]{architecture/ticket_t_uml.png}
+			\caption{Technician Application UML Class Diagram}
+		\end{figure}
