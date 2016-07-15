@@ -50,6 +50,11 @@
 	\pagenumbering{arabic}
 	\pagestyle{fancy}
 	\fancyfoot[R]{\includegraphics[scale = .3]{titlepage/logo.png}}
+	\newcommand{\changefont}{%
+		\fontsize{9}{11}\selectfont
+	}
+	\fancyhead[LE,RO]{\changefont \slshape \rightmark} %section
+	\fancyhead[RE,LO]{\changefont \slshape \leftmark} %chapter
 	
 	\chapter{Introduction}
 	\input{chapters/introduction/introduction}
@@ -63,7 +68,7 @@
 	\chapter{System Architecture}
 	\input{chapters/architecture/architecture}
 	
-	\chapter{Implementation}
+	\chapter{Implementation and Tools}
 	\input{chapters/implementation/implementation}
 	
 	\chapter{Testing}
