@@ -1,0 +1,144 @@
+Mainly back office layer interfaces with the database through web applications. It's concerned with authenticating users, managing customers and devices information, dealing with route optimization problem (an instance of travel salesman problem.), and also dealing with dispatching and scheduling tasks for technicians.
+
+
+Following are some use cases that we found most important in back end layer:
+\subsection{Use Cases}
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 1  \\
+			Use Case Name & Add Customer. \\
+			Actor & Customer service user. \\
+			Trigger & Open add customer page. \\
+			Preconditions & Customer service user logged in and click on add customer button in index page. \\
+			Postconditions & Customer is added to base and customer service user is redirected to customer page. \\
+			Normal Flow &\begin{enumerate}
+				\item Customer service user enters all customer's information.
+				\item Click add button.
+				\item Server validates the data and add customer to the database.
+			\end{enumerate}\\
+			Alternative Flow & None. \\
+		\end{tabular}
+		\caption{Add Customer Use Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 2  \\
+			Use Case Name & Edit Ticket. \\
+			Actor & Customer service user. \\
+			Trigger & Click on edit ticket button. \\
+			Preconditions & Customer service user logged in. \\
+			Postconditions & Ticket information is updated. \\
+			Normal Flow &\begin{enumerate}
+				\item Customer service user enters all needed data.
+				\item Click update button.
+				\item Server validates the data and update concerned ticket information.
+			\end{enumerate}\\
+			Alternative Flow & None. \\
+		\end{tabular}
+		\caption{Edit Ticket Use Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 3  \\
+			Use Case Name & Dispatcher Logout. \\
+			Actor & Dispatcher user. \\
+			Trigger & Click logout button. \\
+			Preconditions & Dispatcher user logged in. \\
+			Postconditions & Dispatcher user logged out. \\
+			Normal Flow &\begin{enumerate}
+				\item Dispatcher user click logout button.
+				\item Server remove this dispatcher user from currently logged in users.
+			\end{enumerate}\\
+			Alternative Flow & None. \\
+		\end{tabular}
+		\caption{Dispatcher Logout Use Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 4  \\
+			Use Case Name & Search Technician by Location \\
+			Actor & Dispatcher user. \\
+			Trigger & Dispatcher user in index page. \\
+			Preconditions & Dispatcher user logged in. \\
+			Postconditions & Dispatcher user is redirected to a page contains technicians nearby the searched location. \\
+			Normal Flow &\begin{enumerate}
+				\item Dispatcher user chooses the required location from the map.
+				\item Clicks search.
+				\item Server search the technicians' locations and return technicians that are near the searched location.			
+			\end{enumerate}\\
+			Alternative Flow & None. \\
+		\end{tabular}
+		\caption{Search Technician by Location Use Case.}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 5  \\
+			Use Case Name & Search Customer. \\
+			Actor & Customer service user. \\
+			Trigger & Enter index page. \\
+			Preconditions & Customer service user logged in. \\
+			Postconditions & Customer service user is redirected to customer's information page. \\
+			Normal Flow &\begin{enumerate}
+				\item Customer service user enters the phone number or the full name of the customer.
+				\item Click on search button.
+				\item Customer service user is redirected to a page with customer's information matching the searched query.
+			\end{enumerate}\\
+			Alternative Flow &\begin{enumerate}
+				\item Customer service user enters the phone number or the full name of the customer.
+				\item Click on search button.
+				\item No customers exists matching the searching query so customer service user is redirected to the 404-page.
+			\end{enumerate} \\
+		\end{tabular}
+		\caption{Search Customer Use Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 6  \\
+			Use Case Name & Assign Ticket. \\
+			Actor & Dispatcher User. \\
+			Trigger & Enter tickets page. \\
+			Preconditions & Dispatcher user logged in and on tickets page. \\
+			Postconditions & Ticket assigned to a specific technician. \\
+			Normal Flow &\begin{enumerate}
+				\item Dispatcher write the skill to search for and then clicks search.
+				\item The server redirects the dispatcher user to a page contains technicians that matches the searched skill and their schedules.
+				\item Dispatcher user enters the desired date and time of visit.
+				\item Clicks assign button.
+				\item Server redirects the dispatcher user to the index page.
+			\end{enumerate}\\
+			Alternative Flow &\begin{enumerate}
+			\item Dispatcher write the skill to search for then clicks search.
+			\item Skill can't be found in the database and the dispatcher user is redirected to a 404-page.
+			\end{enumerate} \\
+		\end{tabular}
+		\caption{Assign Ticket Use Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
