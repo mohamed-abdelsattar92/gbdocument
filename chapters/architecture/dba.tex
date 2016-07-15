@@ -1,0 +1,50 @@
+Database administrator can view, add, edit, and delete any object in the database however his main concern here is managing technicians users, customer service users, dispatcher users, and adding spare parts to the inventory database.
+
+Following are some use cases that we found important for the DBA\footnote{Data Base Administrator.}
+
+\subsection{Use Cases}
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 10  \\
+			Use Case Name & Add Technician User. \\
+			Actor & Database Administrator. \\
+			Trigger & DBA in FSM administration page. \\
+			Preconditions & DBA logged in. \\
+			Postconditions & New technician user is added to the database. \\
+			Normal Flow &\begin{enumerate}
+				\item DBA clicks on add technician user button.
+				\item Server redirects DBA to add page.
+				\item DBA enters all necessary information.
+				\item Clicks add button.
+			\end{enumerate}\\
+			Alternative Flow & None. \\
+		\end{tabular}
+		\caption{Add Technician User Use Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 11  \\
+			Use Case Name & Add Technician Schedule. \\
+			Actor & Database Administrator. \\
+			Trigger & DBA in FSM administration page. \\
+			Preconditions & DBA logged in. \\
+			Postconditions & Technician is assigned a schedule instance. \\
+			Normal Flow &\begin{enumerate}
+				\item DBA clicks on add technician user button.
+				\item Server redirects DBA to add page.
+				\item DBA enters all necessary information.
+				\item Clicks add button.
+			\end{enumerate}\\
+			Alternative Flow & None. \\
+		\end{tabular}
+		\caption{Technician Login Use Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}

@@ -1,1 +1,83 @@
-mobile
+This layer is the working horse of our project as it's mainly concerned with technicians tracking, requesting spare parts for specific ticket, close opened tickets, and invoicing (in case of hand-held devices). It's also our most differentiating module from other applications like CRM applications and EPR applications 
+
+Following are some use cases that we found most important in this layer:
+\subsection{Use Cases}
+		\begin{table}[H]
+			\centering
+			\rowcolors{1}{white}{lightgray}
+			\renewcommand{\arraystretch}{1.5}
+			\begin{tabular}[t]{ c  m{10cm} }
+				Use Case ID & 7  \\
+				Use Case Name & Add Ticket Solution. \\
+				Actor & Technician user. \\
+				Trigger & Technician user enters visit page. \\
+				Preconditions & Technician logged in. \\
+				Postconditions & Visit information and solution are sent to database. \\
+				Normal Flow &\begin{enumerate}
+					\item Technician presses on start button.
+					\item Technician enters the solution in the solution text box.
+					\item Technician enters spare parts used.
+					\item Technician presses stop button.
+					\item Technician presses done button.
+				\end{enumerate}\\
+				Alternative Flow &\begin{enumerate}
+					\item Technician presses on start button.
+					\item Technician enters notes in the solution text box.
+					\item Technician enters spare parts used.
+					\item Technician presses stop button.
+					\item Technician presses follow up button.
+				\end{enumerate} \\
+			\end{tabular}
+			\caption{Add Ticket Solution Use Case}
+			\renewcommand{\arraystretch}{1.0}
+		\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 8  \\
+			Use Case Name & Technician Login. \\
+			Actor & Technician user. \\
+			Trigger & Open the application. \\
+			Preconditions & Login page opened. \\
+			Postconditions & Technician logged in and redirected to index page. \\
+			Normal Flow &\begin{enumerate}
+				\item Technician enters his username and password.
+				\item Server validates entered data after clicking on login button and returns true.
+				\item Technician is redirected to index page.
+			\end{enumerate}\\
+			Alternative Flow &\begin{enumerate}
+				\item Technician enters his username and password.
+				\item Server validates the entered data after clicking on login button and returns false.
+				\item Technician is prompted for the correct username and password.
+			\end{enumerate} \\
+		\end{tabular}
+		\caption{Technician Login Use Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Use Case ID & 9  \\
+			Use Case Name & Request Spare Parts. \\
+			Actor & Technician user. \\
+			Trigger & Technician user enters visit page. \\
+			Preconditions & Technician logged in. \\
+			Postconditions & Spare parts requested are assigned to ticket. \\
+			Normal Flow &\begin{enumerate}
+				\item Technician writes the model name in search box.
+				\item Clicks search button.
+				\item Technician chooses the required parts from returned parts.
+				\item Technician clicks assign button.
+			\end{enumerate}\\
+			Alternative Flow & None. \\
+		\end{tabular}
+		\caption{Request Spare Parts Use Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
