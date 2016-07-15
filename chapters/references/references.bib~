@@ -166,6 +166,20 @@ year = {2016},
 url = {https://developers.google.com/maps/}
 }
 
+@online{graph_coverage,
+author = {Daniel Boeker},
+title = {Graph Coverage in Software Testing},
+year = {2015},
+url = {http://www.tesseractapps.com/2015/graph-coverage/}
+}
+
+@online{sha2,
+author = {Scott Shetler},
+title = {What is SHA-2? Why Should I Care?},
+year = {2014},
+url = {https://www.entrust.com/sha-2-care/}
+}
+
 @book{artificial_intelligence,
   author    = {Peter, Norvig and Stuart, Russell}, 
   title     = {Artificial Intelligence: A Modern Approach},
@@ -173,3 +187,12 @@ url = {https://developers.google.com/maps/}
   year      = {2010},
   address   = {Upper Saddle River, New Jersey}
 }
+
+@book{software_testing,
+  author    = {Jeff, Offutt and Paul, Ammann}, 
+  title     = {Introduction to Software Testing},
+  publisher = {Cambridge University Press},
+  year      = {2008},
+  address   = {New York: Cambridge UP}
+}
+
