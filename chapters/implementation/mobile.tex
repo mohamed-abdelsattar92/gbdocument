@@ -1,1 +1,38 @@
-Mobile
+\subsection[Mobile implementation]{How we used Android SDK and Google maps to build our application?}
+	Our android application contain 2 main Layout source files, we used XML code in this layout source files to create the interface of our android application.
+	
+	\subsubsection{Sign\_in source file}
+		Contain image view to our logo and two Edit text the first is to write the mail or user name and the second to enter the password, it contain also one login button.
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[scale = .6]{implementation/source_view.png}
+		\end{figure}
+	\subsubsection{First source file}
+		It contains three tabs, the first tab called Tasks and it contain ExpandableListView and one logout Button. The second tab called Vacation Request and it contain one EditText and one submit Button. The third tab called Currect Job and it contain one Button and fragment to present the map and one EditText.
+		\begin{figure}[ht]
+			\centering
+			\begin{subfigure}[b]{0.3\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{implementation/first_task_view.png}
+				\caption{Tasks View}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.3\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{implementation/vacation_request.png}
+				\caption{Vacation Request View}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}[b]{0.3\textwidth}
+				\centering
+				\includegraphics[width=\textwidth]{implementation/current_job.png}
+				\caption{Current Job View}
+			\end{subfigure}
+			\hfill
+			\caption{Application Main Views}
+		\end{figure}
+\subsection{Main Java Classes}
+	\subsubsection{Sign\_in class}
+		In this class we make attempt\_login functions like to check if the user name or mail and password is correct or not, it sent the user and the password of an technician to our web service and check if this user name and password is included in our data base or not if yes the technician will be apple to access the first page and if no he will see an error massage to enter the user name and password again in this class we called the web\_service\_connector class to enable connection to web service.
+	\subsubsection{First class}
+		In This class we called ExpandableListAdabter class also we need to call web service connector class and MapActivity class, and after that we make a function in first tab to present the technician Jobs during this day and this weak and the next weak we take this data from our web service , in second tab we make function to take the vacation request of an technician and sent it to our web service, in the third tab we make function to calculate the start time that the technician start an job and to calculate the end time of this job and other function to take any notes during this visit the technician need to tell the dispatcher about it and other function to send the start time and end time and technician notes and visit place to our web service also we used Google maps API and make a function to present any the visits location, it also will enable the technician determined his location and enter any destination he want to go to and view the best path to this location and the time that he will take to reach this location.

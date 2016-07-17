@@ -1,1 +1,139 @@
-back
+Back office layer consists of 5 main modules, auth users, ticket, dispatcher, customer service, and web service module for the android to communicate with the rest of our project.
+
+Each module is a web application by itself, connected together they form the backbone of our project.
+
+\subsection{Authentication Users Module}
+	It's concerned with the authentication of users and handle the encryption and security of passwords stored on the server.
+	
+	Auth Users use the SHA-2 to generate a unique hash value for users' passwords and adding a salt value to it to increase the password protection and protect them from being exposed to intruders.
+	
+	Each class of users has its own Python class which is responsible for hashing passwords and check them later when a user attempt to login, if validated by the server the user is allowed to the system, if not the user will be blocked from entering the system.
+	
+\subsection{Dispatcher Module}
+	This module is concerned with dispatching and scheduling tasks to technicians based on their skills, locations, or schedules.
+	
+	It consists of 8 functions -called views- each view handles a specific task.
+	
+	\subsubsection{dispatcher\_index}
+		Handles the loading of home page for dispatcher so he can go on with his tasks.
+	\subsubsection{dispatcher\_view\_tickets}
+		Handles the filtering of tickets by status as selected by dispatcher.
+	\subsubsection{dispatcher\_search\_technician\_by\_skill}
+		It returns all information about technicians matching the searched skill.
+	\subsubsection{dispatcher\_assign\_ticket}
+		Based on a certain session variable ``reassign'', tickets are assigned or reassigned to certain technicians.
+	\subsubsection{dispatcher\_reschedule\_ticket}
+		 Concerned with rescheduling tickets for the same technician but with different date and time.
+	\subsubsection{dispatcher\_view\_technicians\_by\_name}
+		Concerned with searching the database for technicians whose names specified in the searched query and load them to the GUI\footnote{Graphical User Interface.} template.
+	\subsubsection{dispatcher\_view\_technicians\_by\_skill}
+		Concerned with searching the database for technicians whose skills match the searched skill name and load them to the GUI.
+	\subsubsection{dispatcher\_view\_technician\_by\_location}
+		Concerned with searching the database for technicians that are nearby the searched location.
+		
+\subsection{Customer Service Module}
+	This module is concerned with the initial contact between the customer and the company to report a problem, it consists of 9 main functions.
+	\subsubsection{customer\_service\_index}
+		Handles the loading of home page for customer service users so he can go on with his tasks.
+	\subsubsection{customer\_service\_search\_by\_name}
+		Concerned with searching the database for customers whose names specified in the searched query and load them to the GUI.
+	\subsubsection{customer\_service\_search\_by\_phone}
+		Concerned with searching the database for customers whose phone number matches the searched query and load them to the GUI (Only one customer will be returned as the phone number is unique for each customer).
+	\subsubsection{customer\_service\_add\_device}
+		Concerned with adding a device to a customer with the following information:
+		\begin{itemize}
+			\item Device model name.
+			\item Device serial number.
+			\item Device purchase date.
+		\end{itemize}
+	\subsubsection{customer\_service\_add\_customer}
+		Concerned with adding a customer to the database with the following information:
+		\begin{itemize}
+			\item Customer's first name.
+			\item Customer's middle name.
+			\item Customer's last name.
+			\item Customer's phone number.
+			\item Customer's mobile number.
+			\item Customer's formatted address.
+		\end{itemize}
+	\subsubsection{customer\_service\_add\_ticket}
+		Concerned with adding a service ticket to a certain device with the following information:
+		\begin{itemize}
+			\item Ticket's problem title.
+			\item Ticket's problem description.
+			\item Ticket's initial status (Opened).
+		\end{itemize}
+	\subsubsection{customer\_service\_edit\_customer}
+		Concerned with editing existing customer's information.
+	\subsubsection{customer\_service\_edit\_device}
+		Concerned with editing existing device's information.
+	\subsubsection{customer\_service\_edit\_ticket}
+		Concerned with editing existing ticket's information.
+		
+\subsection{Web Service Module}
+	For the android application to connect to the back end database we implement a RESTful\footnote{Representational State Transfer.} web service using \href{http://www.django-rest-framework.org/}{django-rest-framework}. As mentioned before RESTful web services rely heavily on HTTP and JSON, so follows are the URLs used to access our web service, supported HTTP methods, request and response JSON objects parameters.
+	
+	\subsubsection{api/technician/tech\_id/update/location}
+		\begin{itemize}
+			\item Usage: to update the location of the technician in the database.
+			\item Supported methods: PUT, GET
+			\item tech\_id: should be replaced by the actual technician ID.
+			\item GET parameters: long --> technician longitude, lat --> technician latitude.
+			\item PUT JSON object parameters: \begin{itemize}
+				\item ``location\_latitude'': technician latitude.
+				\item ``location\_longitude'': technician longitude.
+			\end{itemize}
+		\end{itemize}
+	\subsubsection{api/technician/login}
+		\begin{itemize}
+			\item Usage: to authenticate technician login.
+			\item Supported methods: POST
+			\item JSON request object parameters: \begin{itemize}
+				\item ``username'': technician user name.
+				\item ``password'': technician password
+			\end{itemize}
+			\item JSON response object parameters: \begin{itemize}
+				\item ``technician\_id'': returned technician ID.
+				\item  ``technician\_exists'': either true or false.
+			\end{itemize}
+		\end{itemize}
+	\subsubsection{api/technician/tech\_id/visits/today}
+		\begin{itemize}
+			\item Usage: to get the list of all today's visits.
+			\item Supported methods: GET
+			\item tech\_id: should be replaced with the actual technician ID.
+			\item JSON response object parameters: \begin{itemize}
+				\item ``longitude'': visit longitude.
+				\item ``latitude'': visit latitude.
+				\item ``date\_of\_visit'': date of visit
+				\item ``problem\_description'': the description of the problem in the ticket as described by customer service user.
+				\item ``ticket\_id'': the concerned ticket ID.
+				\item ``visit\_order'': the order of the visit as returned by route optimization module.
+				\item ``visit\_status'': the status of the visit if it's done or still waiting.
+			\end{itemize}
+		\end{itemize}
+	\subsubsection{api/technician/tech\_id/visits/all}
+		\begin{itemize}
+			\item Usage: to get a list of all visits belong to the technician specified by tech\_id.
+			\item Supported methods: GET
+			\item tech\_id: should be replaced with the actual technician ID.
+			\item JSON response object parameters: \begin{itemize}
+				\item ``longitude'': visit longitude.
+				\item ``latitude'': visit latitude.
+				\item ``date\_of\_visit'': date of visit
+				\item ``problem\_description'': the description of the problem in the ticket as described by customer service user.
+				\item ``ticket\_id'': the concerned ticket ID.
+				\item ``visit\_status'': the status of the visit if it's done or still waiting.
+			\end{itemize}
+		\end{itemize}
+	\subsubsection{api/technician/ticket/ticket\_id/solution}
+		\begin{itemize}
+			\item Usage: to put a solution for a ticket and close it.
+			\item Supported methods: POST
+			\item ticket\_id: should be replaced with the actual ticket ID.
+			\item JSOn request object parameters: \begin{itemize}
+				\item ``solution'': the solution of the problem as described by the technician.
+				\item ``start\_time'': the start time of the visit.
+				\item ``end\_time'': the end time of the visit.
+			\end{itemize}
+		\end{itemize}
