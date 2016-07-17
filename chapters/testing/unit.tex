@@ -1,0 +1,259 @@
+We're going to test each function in isolation from the system and make sure it does what it's supposed to do. We're going to use CFG\footnote{Control Flow Graph.} edge and node coverage.
+
+Following are the most important test cases that we see must be validated in order for the system to function properly:
+
+\subsection{Test Cases}
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 1  \\
+			SUT &  customer\_service\_login()\\
+			Prerequisites &  Customer service user in application home page and database has a username = ``mohamed92'' and a password = ``mohamed\_92''. \\
+			Purpose & To test the login of customer service users.  \\
+			Input &  username = ``mohamed92'', password = ``mohamed\_92''. \\
+			Expected Output &  True, session['username'] = ``mohamed92''.\\
+			Actual Output & True, session['username'] = ``mohamed92''.\\
+		\end{tabular}
+		\caption{Customer Service Login True Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 2  \\
+			SUT &  customer\_service\_login()\\
+			Prerequisites &  Customer service user in application home page and database doesn't has a username = ``mohamed92'' and a password = ``mohamed\_92''.\\
+			Purpose &  To test the login of customer service users.\\
+			Input &  username = ``mohamed92'', password = ``mohamed\_92''.\\
+			Expected Output & False. \\
+			Actual Output & False. \\
+		\end{tabular}
+		\caption{Customer Service Login False Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 3  \\
+			SUT &  customer\_service\_logout() \\
+			Prerequisites & Customer service user is logged in. \\
+			Purpose & To test that after clicking the logout button, customer service users is logged out from this session.\\
+			Input &  Logout button click.\\
+			Expected Output &  session['username'] = None.\\
+			Actual Output & session['username'] = None. \\
+		\end{tabular}
+		\caption{Customer Service Logout Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 4  \\
+			SUT &  customer\_service\_search\_by\_phone() \\
+			Prerequisites &  Customer service user in index page and phone number exists in the database. \\
+			Purpose & To test if customers would be returned if this phone number exists in the database. \\
+			Input &  phone\_number = 25918583. \\
+			Expected Output &  Mohamed Abdel Sattar. \\
+			Actual Output & Mohamed Abdel Sattar. \\
+		\end{tabular}
+		\caption{Customer Service Search By Phone Exists Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 5 \\
+			SUT & customer\_service\_search\_by\_phone() \\
+			Prerequisites &  Customer service user in index page and phone number doesn't exists in the database. \\
+			Purpose & To test for 404-page when phone number doesn't exist in the database. \\
+			Input &  12345678. \\
+			Expected Output &  404-page returned. \\
+			Actual Output & 404-page returned. \\
+		\end{tabular}
+		\caption{Customer Service Search By Phone Doesn't Exists Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 6  \\
+			SUT & customer\_service\_index() \\
+			Prerequisites & Customer service users is logged in. \\
+			Purpose & To test the index page and ensure the functionality of the application. \\
+			Input & Press login button. \\
+			Expected Output & Index page opened in the browser. \\
+			Actual Output & Index page opened in the browser. \\
+		\end{tabular}
+		\caption{Customer Service Index Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 7  \\
+			SUT & customer\_service\_add\_device() \\
+			Prerequisites & Customer service user is logged in and press on add device button. \\
+			Purpose & To test if the device will be added and related to the concerned customer. \\
+			Input & Device's information. \\
+			Expected Output & Device is added to the database and Customer service user is redirected to index page. \\
+			Actual Output & Device is added to the database and Customer service user is redirected to index page. \\
+		\end{tabular}
+		\caption{Customer Service Add Device Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 8  \\
+			SUT & customer\_service\_edit\_customer() \\
+			Prerequisites & Customer service user is logged in and press on edit customer button. \\
+			Purpose & To test whether information will be updated or not. \\
+			Input & Customer's new data. \\
+			Expected Output & Customer's data updated. \\
+			Actual Output & Customer's data updated. \\
+		\end{tabular}
+		\caption{Customer Service Edit Customer Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 9  \\
+			SUT & dispatcher\_view\_tickets() \\
+			Prerequisites & Dispatcher user is logged in and chooses statuses of tickets to view. \\
+			Purpose & To test if tickets with chosen statuses will be returned and shown on GUI. \\
+			Input & Ticket statuses. \\
+			Expected Output & Tickets of chosen statuses are shown on the screen. \\
+			Actual Output & Tickets of chosen statuses are shown on the screen. \\
+		\end{tabular}
+		\caption{Dispatcher View Tickets Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 10  \\
+			SUT & dispatcher\_search\_technician\_by\_skill() \\
+			Prerequisites & Dispatcher user is logged in and click on search technicians button. \\
+			Purpose & To make sure technicians with the searched skill are retrieved from the database and loaded to the GUI. \\
+			Input & Skill name. \\
+			Expected Output & Technicians with given skill are loaded to the GUI. \\
+			Actual Output & Technicians with given skill are loaded to the GUI. \\
+		\end{tabular}
+		\caption{Dispatcher Search Technician By Skill Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 11  \\
+			SUT & dispatcher\_assign\_ticket() \\
+			Prerequisites & Dispatcher user is logged in and click on assign button. \\
+			Purpose & To test if a ticket is assigned to a technician successfully or not. \\
+			Input & Date and time of visit. \\
+			Expected Output & Ticket assigned to the specified technician with the given date and time. \\
+			Actual Output & Ticket assigned to the specified technician with the given date and time. \\
+		\end{tabular}
+		\caption{Dispatcher Assign Ticket Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 12  \\
+			SUT & dispatcher\_reschedule\_ticket() \\
+			Prerequisites & Dispatcher user is logged in and click on reschedule ticket button. \\
+			Purpose & To test that visit's time gets changed. \\
+			Input & New Date and time of visit. \\
+			Expected Output & Visit's date and time are changed. \\
+			Actual Output & Visit's date and time are changed. \\
+		\end{tabular}
+		\caption{Dispatcher Reschedule Ticket Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 13  \\
+			SUT & technician\_get\_list\_of\_today\_visits() \\
+			Prerequisites & Technician user is logged in and press on today's tab in the android application. \\
+			Purpose & To test if the visits are ordered in the most efficient way (The route of the technician is optimized.). \\
+			Input & List of latitudes and longitudes. \\
+			Expected Output & Ordered list of latitudes and longitudes. \\
+			Actual Output & Ordered list of latitudes and longitudes. \\
+		\end{tabular}
+		\caption{Technician Today's Visits Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 14  \\
+			SUT & technician\_add\_ticket\_solution() \\
+			Prerequisites & Technician user is logged in and in individual visit page. \\
+			Purpose & To test if the technician is able to make a post HTTP request with the ticket solution and close the ticket. \\
+			Input & Solution of the ticket, start time, and end time of visit. \\
+			Expected Output & Ticket solution updated in the database and the ticket status changed to close. \\
+			Actual Output & Ticket solution updated in the database and the ticket status changed to close. \\
+		\end{tabular}
+		\caption{Technician Add Solution Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\rowcolors{1}{white}{lightgray}
+		\renewcommand{\arraystretch}{1.5}
+		\begin{tabular}[t]{ c  m{10cm} }
+			Test Case ID & 15  \\
+			SUT & technician\_update\_location() \\
+			Prerequisites & Technician logged in. \\
+			Purpose & To test that technician's location is updated in database when calling this function. \\
+			Input & Technician latitude and longitude. \\
+			Expected Output & Technician latitude and longitude are updated in the database. \\
+			Actual Output & Technician latitude and longitude are updated in the database. \\
+		\end{tabular}
+		\caption{Technician Update Location Test Case}
+		\renewcommand{\arraystretch}{1.0}
+	\end{table}
